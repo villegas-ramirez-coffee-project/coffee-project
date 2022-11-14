@@ -1,18 +1,27 @@
 "use strict"
 
-function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+// function renderCoffee(coffee) {
+//     var html = '<tr class="coffee">';
+//     html += '<td>' + coffee.id + '</td>';
+//     html += '<td>' + coffee.name + '</td>';
+//     html += '<td>' + coffee.roast + '</td>';
+//     html += '</tr>';
+//
+//     return html;
+// }
 
+function renderCoffee(coffee) {
+    var html = '<div class="coffee">';
+    html += '<span id="coffeeName">' + coffee.name + '   ' + '</span>';
+    html += '<span id="coffeeRoast">' + coffee.roast + '</span>';
     return html;
 }
 
+
+
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(var i = 0; i <= coffees.length -1; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
