@@ -81,15 +81,22 @@ submitButton.addEventListener('click', updateCoffees);
 //  Search Bar Code
 const searchInput = document.querySelector("[data-search]")
 
+
+
     searchInput.addEventListener("input", searchInput => {
-        let resultList = document.querySelector("#result");
-        resultList.innerHTML = "";
+        // let resultList = document.querySelector("#result");
+        // resultList.innerHTML = "";
+        var searchResults = [];
+        searchResults.innerHTML = "";
         const value = searchInput.target.value.toLowerCase()
         coffees.forEach(coffee => {
             if (coffee.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 || coffee.roast.toLowerCase().indexOf(value.toLowerCase()) !== -1){
-                resultList.innerHTML += `<li class="list-group-item">${coffee.name} ${coffee.roast}</li>`;
+                // resultList.innerHTML += `<li class="list-group-item">${coffee.name} ${coffee.roast}</li>`;
+                // tbody.innerHTML = renderCoffees(coffee.name);
+                searchResults.push(coffee);
             }
-        })
+        });
+        tbody.innerHTML = renderCoffees(searchResults);
     })
 
 
