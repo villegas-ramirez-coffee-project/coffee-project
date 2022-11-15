@@ -64,3 +64,19 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
+//  Search Bar Code
+const searchInput = document.querySelector("[data-search]")
+
+searchInput.addEventListener("input", e => {
+    let resultList = document.querySelector("#result");
+    resultList.innerHTML = "";
+    const value = e.target.value.toLowerCase()
+    coffees.forEach(coffee => {
+        if (coffee.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 || coffee.roast.toLowerCase().indexOf(value.toLowerCase()) !== -1){
+            resultList.innerHTML += `<li class="list-group-item">${coffee.name} ${coffee.roast}</li>`;
+        }
+    })
+})
+
