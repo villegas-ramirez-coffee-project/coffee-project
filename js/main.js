@@ -1,4 +1,6 @@
-"use strict"
+"use strict";
+
+(function (){
 
 // function renderCoffee(coffee) {
 //     var html = '<tr class="coffee">';
@@ -31,13 +33,21 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
+
+        if (selectedRoast === 'all'){
+            tbody.innerHTML = renderCoffees(coffees);
+        } else {
+            coffees.forEach(function(coffee) {
+            // console.log(selectedRoast);
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
+            // console.log(selectedRoast);
+            });
+            tbody.innerHTML = renderCoffees(filteredCoffees);
+        }}
+
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -71,14 +81,29 @@ submitButton.addEventListener('click', updateCoffees);
 //  Search Bar Code
 const searchInput = document.querySelector("[data-search]")
 
-searchInput.addEventListener("input", e => {
-    let resultList = document.querySelector("#result");
-    resultList.innerHTML = "";
-    const value = e.target.value.toLowerCase()
-    coffees.forEach(coffee => {
-        if (coffee.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 || coffee.roast.toLowerCase().indexOf(value.toLowerCase()) !== -1){
-            resultList.innerHTML += `<li class="list-group-item">${coffee.name} ${coffee.roast}</li>`;
-        }
+    searchInput.addEventListener("input", searchInput => {
+        let resultList = document.querySelector("#result");
+        resultList.innerHTML = "";
+        const value = searchInput.target.value.toLowerCase()
+        coffees.forEach(coffee => {
+            if (coffee.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 || coffee.roast.toLowerCase().indexOf(value.toLowerCase()) !== -1){
+                resultList.innerHTML += `<li class="list-group-item">${coffee.name} ${coffee.roast}</li>`;
+            }
+        })
     })
-})
 
+
+
+})();
+
+// searchInput.addEventListener("input", searchInput => {
+//     let resultList = document.querySelector("#result");
+//     resultList.innerHTML = "";
+//     const value = searchInput.target.value.toLowerCase()
+//     coffees.forEach(coffee => {
+//         if (coffee.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 || coffee.roast.toLowerCase().indexOf(value.toLowerCase()) !== -1){
+//             resultList.innerHTML += `<li class="list-group-item">${coffee.name} ${coffee.roast}</li>`;
+//
+//         }
+//     })
+// })
