@@ -82,7 +82,6 @@
     // Add coffee code
     var coffeeForm = document.querySelector('#add-Coffee');
 
-    let userCoffeeAdd = [];
     coffeeForm.addEventListener('submit', (e) => {
         e.preventDefault();
         let coffeeAdd = {
@@ -91,13 +90,12 @@
             roast: document.getElementById('coffee-roast').value
         };
 
-        userCoffeeAdd.push(coffeeAdd);
         coffees.push(coffeeAdd);
         tbody.innerHTML = renderCoffees(coffees);
         // cleared form
         document.querySelector('#add-Coffee').reset();
         //saved to localStorage
-        localStorage.setItem('AddedCoffee', JSON.stringify(userCoffeeAdd) );
+        localStorage.setItem('AddedCoffee', JSON.stringify(coffees) );
     });
 
 })();
