@@ -100,17 +100,24 @@ const searchInput = document.querySelector("[data-search]")
     })
 
 
+    var coffeeForm = document.querySelector('#add-Coffee');
+
+    let userCoffeeAdd = [];
+    coffeeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let coffeeAdd = {
+            id: Date.now(),
+            name: document.getElementById('coffee-name').value,
+            roast: document.getElementById('coffee-roast').value
+        };
+        userCoffeeAdd.push(coffeeAdd);
+        coffees.push(coffeeAdd);
+        tbody.innerHTML = renderCoffees(coffees);
+        // cleared form
+        document.querySelector('#add-Coffee').reset();
+        //saved to localStorage
+        localStorage.setItem('AddedCoffee', JSON.stringify(userCoffeeAdd) );
+    });
 
 })();
 
-// searchInput.addEventListener("input", searchInput => {
-//     let resultList = document.querySelector("#result");
-//     resultList.innerHTML = "";
-//     const value = searchInput.target.value.toLowerCase()
-//     coffees.forEach(coffee => {
-//         if (coffee.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 || coffee.roast.toLowerCase().indexOf(value.toLowerCase()) !== -1){
-//             resultList.innerHTML += `<li class="list-group-item">${coffee.name} ${coffee.roast}</li>`;
-//
-//         }
-//     })
-// })

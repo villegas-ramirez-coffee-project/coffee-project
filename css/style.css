@@ -16,3 +16,36 @@ td, th {
 #coffeeRoast {
     color: darkgrey;
 }
+h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    display: flex;
+    font-weight: bold;
+}
+div .mb-3{
+    /*margin-: 2em;*/
+}
+button{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+/*.search-container{*/
+/*    display: flex;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+
+/*}*/
+/*#roast-selection{*/
+/*    display: flex;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
