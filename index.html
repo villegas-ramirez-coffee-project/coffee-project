@@ -14,69 +14,69 @@
 <h1>Coffee!</h1>
 
 
-    <!--Card Section-->
-    <section>
-        <div class="container">
-            <div class="row">
+<!--Card Section-->
+<section>
+    <div class="container">
+        <div class="row">
 
 
-                <div class="col-6">
-                    <div id="coffees"></div>
+            <div class="col-6">
+                <div id="coffees"></div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <form>
+                        <!--Drop Down-->
+                        <div>
+                            <label for="roast-selection">Roast</label>
+                            <select id="roast-selection" class="form-select" aria-label="Default select example">
+                                <option>all</option>
+                                <option>light</option>
+                                <option>medium</option>
+                                <option>dark</option>
+                            </select>
+                        </div>
+                        <!--Search bar-->
+                        <div>
+                            <label for="search">Search Coffees</label>
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" data-search>
+                        </div>
+                        <!--Submit Button-->
+                        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
 
-
-                    <div class="col-6">
-                        <div class="mb-3">
-                            <form>
-                                <!--Drop Down-->
-                                <div>
-                                    <label for="roast-selection">Roast</label>
-                                    <select id="roast-selection" class="form-select" aria-label="Default select example">
-                                        <option>all</option>
-                                        <option>light</option>
-                                        <option>medium</option>
-                                        <option>dark</option>
-                                    </select>
-                                </div>
-                                <!--Search bar-->
-                                <div>
-                                    <label for="search">Search Coffees</label>
-                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" data-search>
-                                </div>
-                                <!--Submit Button-->
-                                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-                            </form>
+                <div class="mb-3">
+                    <form id="add-Coffee">
+                        <!--Drop Down-->
+                        <div>
+                            <label for="coffee-roast">Select Roast</label>
+                            <select id="coffee-roast" name="coffee-roast" class="form-select" aria-label="Default select example">
+                                <option>light</option>
+                                <option>medium</option>
+                                <option>dark</option>
+                            </select>
                         </div>
-
-                        <div class="mb-3">
-                            <form id="add-Coffee">
-                                <!--Drop Down-->
-                                <div>
-                                    <label for="coffee-roast">Select Roast</label>
-                                    <select id="coffee-roast" name="coffee-roast" class="form-select" aria-label="Default select example">
-                                        <option>light</option>
-                                        <option>medium</option>
-                                        <option>dark</option>
-                                    </select>
-                                </div>
-                                <!--Search bar-->
-                                <div>
-                                    <label for="coffee-name">Coffee Name</label>
-                                    <input id="coffee-name" type="text" name="coffee-name" class="form-control me-2" placeholder="Search" aria-label="Search">
-                                </div>
-                                <!--Submit Button-->
-                                <button type="submit" id="add-coffee-button" class="btn btn-primary">Submit</button>
-                            </form>
+                        <!--Search bar-->
+                        <div>
+                            <label for="coffee-name">Coffee Name</label>
+                            <input id="coffee-name" type="text" name="coffee-name" class="form-control me-2" placeholder="Search" aria-label="Search">
                         </div>
-                    </div>
-
+                        <!--Submit Button-->
+                        <button type="submit" id="add-coffee-button" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
-    </section>
+
+        </div>
+    </div>
+</section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!-- Your custom JS goes here -->
-    <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- Your custom JS goes here -->
+<script src="js/main.js"></script>
 </body>
 </html>
