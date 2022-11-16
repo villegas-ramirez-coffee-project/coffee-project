@@ -27,11 +27,9 @@
             tbody.innerHTML = renderCoffees(coffees);
         } else {
             coffees.forEach(function(coffee) {
-                // console.log(selectedRoast);
                 if (coffee.roast === selectedRoast) {
                     filteredCoffees.push(coffee);
                 }
-                // console.log(selectedRoast);
             });
             tbody.innerHTML = renderCoffees(filteredCoffees);
         }}
@@ -58,6 +56,7 @@
     var submitButton = document.querySelector('#submit');
     var roastSelection = document.querySelector('#roast-selection');
 
+    // Listener for all
     roastSelection.addEventListener('change', updateCoffees);
 
     tbody.innerHTML = renderCoffees(coffees);
@@ -65,28 +64,22 @@
     submitButton.addEventListener('click', updateCoffees);
 
 
-//  Search Bar Code
-    const searchInput = document.querySelector("[data-search]")
-
-
+    //  Search Bar Code
+    var searchInput = document.querySelector("[data-search]")
 
     searchInput.addEventListener("input", searchInput => {
-        // let resultList = document.querySelector("#result");
-        // resultList.innerHTML = "";
         var searchResults = [];
         searchResults.innerHTML = "";
-        const value = searchInput.target.value.toLowerCase()
+        var value = searchInput.target.value.toLowerCase()
         coffees.forEach(coffee => {
             if (coffee.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 || coffee.roast.toLowerCase().indexOf(value.toLowerCase()) !== -1){
-                // resultList.innerHTML += `<li class="list-group-item">${coffee.name} ${coffee.roast}</li>`;
-                // tbody.innerHTML = renderCoffees(coffee.name);
                 searchResults.push(coffee);
             }
         });
         tbody.innerHTML = renderCoffees(searchResults);
     })
 
-
+    // Add coffee code
     var coffeeForm = document.querySelector('#add-Coffee');
 
     let userCoffeeAdd = [];
@@ -97,6 +90,7 @@
             name: document.getElementById('coffee-name').value,
             roast: document.getElementById('coffee-roast').value
         };
+
         userCoffeeAdd.push(coffeeAdd);
         coffees.push(coffeeAdd);
         tbody.innerHTML = renderCoffees(coffees);
