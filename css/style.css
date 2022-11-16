@@ -30,9 +30,7 @@ label{
     display: flex;
     font-weight: bold;
 }
-div .mb-3{
-    /*margin-: 2em;*/
-}
+
 button{
     display: flex;
     flex-direction: column;
