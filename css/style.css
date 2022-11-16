@@ -38,14 +38,7 @@ button{
     flex-direction: column;
     margin-top: 1em;
 }
-/*.search-container{*/
-/*    display: flex;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
+.search-label{
+    margin-top: 1em;
+}
 
-/*}*/
-/*#roast-selection{*/
-/*    display: flex;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/

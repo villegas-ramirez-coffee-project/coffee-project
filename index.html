@@ -12,7 +12,7 @@
 <body>
 
 <h1>Coffee!</h1>
-
+<hr>
 
 <!--Card Section-->
 <section>
@@ -30,7 +30,7 @@
                     <form>
                         <!--Drop Down-->
                         <div>
-                            <label for="roast-selection">Roast</label>
+                            <label for="roast-selection" class="search-label">Roast</label>
                             <select id="roast-selection" class="form-select" aria-label="Default select example">
                                 <option>all</option>
                                 <option>light</option>
@@ -40,19 +40,24 @@
                         </div>
                         <!--Search bar-->
                         <div>
-                            <label for="search">Search Coffees</label>
+                            <label for="search" class="search-label">Search Coffees</label>
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" data-search>
                         </div>
                         <!--Submit Button-->
                         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
+                <hr>
+
+            <div class="d-flex justify-content-center">
+                <h2>Add a Coffee</h2>
+            </div>
 
                 <div class="mb-3">
                     <form id="add-Coffee">
                         <!--Drop Down-->
                         <div>
-                            <label for="coffee-roast">Select Roast</label>
+                            <label for="coffee-roast" class="search-label">Select Roast</label>
                             <select id="coffee-roast" name="coffee-roast" class="form-select" aria-label="Default select example">
                                 <option>light</option>
                                 <option>medium</option>
@@ -61,7 +66,7 @@
                         </div>
                         <!--Search bar-->
                         <div>
-                            <label for="coffee-name">Coffee Name</label>
+                            <label for="coffee-name" class="search-label">Coffee Name</label>
                             <input id="coffee-name" type="text" name="coffee-name" class="form-control me-2" placeholder="Search" aria-label="Search">
                         </div>
                         <!--Submit Button-->
